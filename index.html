@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Title</title>
+    <title>Lyrical Search</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       rel="stylesheet"
@@ -13,6 +13,42 @@
   </head>
 
   <body>
+    <h1>Lyrical Search</h1>
+    <p>
+      Lyrical Search has got you covered for everything you wanted to know about a song. Type in an artist and song name
+      for more information about them!
+    </p>
+
+    <div class="container">
+      <form>
+        <label for="js-artist-search-area">Enter the artist here:</label><br />
+        <br /><input
+          type="text"
+          name="artistSearchArea"
+          id="js-artist-search-area"
+          placeholder="e.g. Queen"
+          required
+        /><br />
+        <br /><label for="js-title-search-area">Enter the song title:</label
+        ><br />
+        <br /><input
+          type="text"
+          name="titleSearchArea"
+          id="js-title-search-area"
+          placeholder="e.g. We Will Rock You!"
+          required
+        /><br />
+        <br /><input type="submit" value="Search" />
+      </form>
+    </div>
+    <p id="js-error-message" class="error-message"></p>
+    <section id="results" class="hidden">
+      <h2>Search Results</h2>
+      <div id="youtube-link"></div>
+      <div id="song-info"></div>
+      <div id="song-lyrics"></div>
+    </section>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
