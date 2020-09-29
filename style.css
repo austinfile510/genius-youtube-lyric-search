@@ -8,6 +8,20 @@ error-message {
 
 p {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    font-family: 'Roboto', sans-serif;
+}
+
+label{
+    font-family: 'Pacifico', cursive;
+}
+
+pre {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
 }
 
 form {
@@ -16,6 +30,15 @@ form {
 
 h1 {
     text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+}
+
+h3 {
+    font-family: 'Pacifico', cursive;
 }
 
 ul {
