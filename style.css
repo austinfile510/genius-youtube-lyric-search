@@ -6,6 +6,57 @@ error-message {
     color: red;
 }
 
+/* Headers */
+
+header {
+    min-height: 200px;
+    padding: 50px 20px;
+    background-image: url(images/concert-background.jpg);
+    background-size: 150%;
+    background-position: 0px 100px;
+    color: white;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+      
+}
+
+/* Link Styling */
+
+html {
+    height: 100%;
+}
+
+
+
+/* Results */
+
+body {
+    background-image: url(images/record-results-image.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: 0 400px;
+    height: 100%;
+    color: white;
+}
+
+.js-lyrics {
+    padding: 10px;
+}
+
+/* Shadow Class for Text */
+
+.shadow {
+    text-shadow: 1px 1px #000000,
+    2px 2px #000000,
+    3px 3px #000000,
+    4px 4px #000000;
+    color: white
+    font: 'Roboto', sans-serif;
+}
+
 p {
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -25,33 +76,54 @@ pre {
 }
 
 form {
-    text-align: center; 
-}
-
-h1 {
     text-align: center;
-    font-family: 'Pacifico', cursive;
+    max-width: 200px; 
+    margin: 0 auto;
+    padding: 10px;
 }
 
-h2 {
-    font-family: 'Pacifico', cursive;
-}
-
-h3 {
-    font-family: 'Pacifico', cursive;
-}
-
-ul {
-    list-style: 
-    padding: 0;
-    margin: 0;
-}
-
-li {
+.submit-button {
+    width: 100%;
     padding: 10px;
 }
 
 .container {
+    display: flex;
     max-width: 600px;
     margin: 0 auto;
+    justify-content: space-around;
 }
+
+
+/* Media Queries */
+
+/* Tablet */
+
+@media(min-width: 600px){
+    header{
+        background-position: 0px 400px;
+    }
+}
+
+/* Desktop - Standard*/
+
+@media(min-width: 1100px){
+    header {
+        background-size: cover;
+        background-position: 0px 500px;
+    }
+
+    .container {
+        flex-direction: row;
+    }
+}
+
+/* Desktop - Widescreen */
+
+@media(min-width: 2000px){
+    header {
+        background-size: ;
+        background-position: 0px 700px;
+    }
+}
+

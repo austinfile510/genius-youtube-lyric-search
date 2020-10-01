@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = en>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -17,15 +17,16 @@
   </head>
 
   <body>
-    <h1>Lyrical Search</h1>
-    <p>
-      Lyrical Search has got you covered for everything you wanted to know about
-      a song. Type in an artist and song name for more information about them!
-    </p>
 
-    <div class="container">
+    <header>
+      <h1 class= "shadow">Lyrical Search</h1>
+      <p>
+        Lyrical Search has got you covered for everything you wanted to know
+        about a song. Type in an artist and song name for more information about
+        them!
+      </p>
       <form>
-        <label for="js-artist-search-area">Enter the artist:</label><br />
+        <label for="js-artist-search-area" class="shadow">Enter the artist:</label><br />
         <br /><input
           type="text"
           name="artistSearchArea"
@@ -33,7 +34,7 @@
           placeholder="e.g. Queen"
           required
         /><br />
-        <br /><label for="js-title-search-area">Enter the song title:</label
+        <br /><label for="js-title-search-area" class="shadow">Enter the song title:</label
         ><br />
         <br /><input
           type="text"
@@ -42,16 +43,20 @@
           placeholder="e.g. We Will Rock You!"
           required
         /><br />
-        <br /><input type="submit" value="Search" />
+        <br /><input type="submit" class= "submit-button" value="Search" />
       </form>
-    </div>
-    <p id="js-error-message" class="error-message"></p>
-    <section id="results" class="hidden">
-      <h2>Search Results</h2>
-      <div id="youtube-link"></div>
-      <div id="song-info"></div>
-      <div id="song-lyrics"></div>
-    </section>
+    </header>
+
+    <main class="container">
+     
+      <p id="js-error-message" class="error-message"></p>
+      <section id="results" class="hidden shadow">
+        <h2>Search Results</h2>
+        <div id="youtube-link"></div>
+        <div id="song-info"></div>
+        <div id="song-lyrics"></div>
+      </section>
+    <main>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"

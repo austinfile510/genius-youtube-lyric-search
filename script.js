@@ -92,6 +92,7 @@ function getYoutubeVideos(query) {
     })
     .then((responseJson) => displayVideo(responseJson))
     .catch((err) => {
+      $();
       $("#js-error-message").text(`Something went wrong: ${err.message}`);
     });
 }
@@ -101,7 +102,7 @@ function getYoutubeVideos(query) {
 // Display Lyrics
 
 function displayLyrics(responseJson) {
-  $('#song-lyrics').empty();
+  $("#song-lyrics").empty();
   console.log(responseJson);
   const songLyrics = responseJson.lyrics;
   $("#song-lyrics").append(`
@@ -114,30 +115,35 @@ function displayLyrics(responseJson) {
 // Display Video
 
 function displayVideo(responseJson) {
-  $('#youtube-link').empty();
+  $("#youtube-link").empty();
   console.log(responseJson);
   let videoLink = responseJson.items[0];
   $("#youtube-link").append(`
   <h2><a href = "https://www.youtube.com/watch?v=${videoLink.id.videoId}">${titleSearchTerm} - ${artistSearchTerm}</a></h2>
+  <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/${videoLink.id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>>
+  </iframe>
 `);
 }
 
 // Display Song Info
 
 function displaySongInfo(responseJson) {
-  $('#song-info').empty();
+  $("#song-info").empty();
   console.log(responseJson);
   const albumTitle = responseJson.track[0].strAlbum;
   const songInfo = responseJson.track[0].strDescriptionEN;
-    if (!songInfo) {
-      $("#song-info").append(`
+  if (!songInfo) {
+    $("#song-info").append(`
       <p>We're sorry, but no song info is available for this track in AudioDB. Check <a href="https://www.google.com">Google</a> for more information.</p>
-    `)}
-  else { $("#song-info").append(`  
+    `);
+  } else {
+    $("#song-info").append(`  
   </br>
   <p>Album: ${albumTitle}</p>
-  <p>${songInfo}</p>
-  `)};
+  <p class= "js-lyrics">${songInfo}</p>
+  `);
+  }
   $("#results").removeClass("hidden");
 }
 
