@@ -46,6 +46,9 @@ body {
     padding: 10px;
 }
 
+iframe {
+    margin: 0 auto;
+}
 /* Shadow Class for Text */
 
 .shadow {
