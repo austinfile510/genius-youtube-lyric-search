@@ -1,6 +1,6 @@
 "use strict";
 
-const apiKey = "AIzaSyC8VlFTOdIZ35d_fCxhKb-YQrMJtMk04Fo"; // Youtube API Key
+const apiKey = "AIzaSyBakekAtuZIS_hBlS7pW58PrW-WeeOXbGA"; // Youtube API Key
 
 // API Root URLS
 
@@ -129,6 +129,7 @@ function displayVideo(responseJson) {
 // Display Song Info
 
 function displaySongInfo(responseJson) {
+  $("#error-message").empty();
   $("#song-info").empty();
   console.log(responseJson);
   const albumTitle = responseJson.track[0].strAlbum;

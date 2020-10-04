@@ -29,26 +29,46 @@ html {
     height: 100%;
 }
 
+a:link {
+    color: white;
+    text-decoration: none;
+}
 
+a:hover {
+    color: lightgray;
+}
+
+a:active {
+    color: gray;
+}
+
+a:visited {
+    color: white;
+}
+
+/* Video Embed */
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
 
 /* Results */
 
 body {
-    background-image: url(images/record-results-image.jpg);
+    background-image: url(images/results-background.jpg);
     background-size: cover; 
     background-repeat: no-repeat;
-    background-position: 0 400px;
     height: 100%;
     color: white;
+    background-attachment: fixed;
 }
 
 .js-lyrics {
     padding: 10px;
 }
 
-iframe {
-    margin: 0 auto;
-}
+
 /* Shadow Class for Text */
 
 .shadow {
