@@ -1,6 +1,6 @@
 "use strict";
 
-const apiKey = "AIzaSyAdliWMjb6YxZVTW-O-omW2a2bNCYkkskU"; // Youtube API Key
+const apiKey = "AIzaSyC8VlFTOdIZ35d_fCxhKb-YQrMJtMk04Fo"; // Youtube API Key
 
 // API Root URLS
 
