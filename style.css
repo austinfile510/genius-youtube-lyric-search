@@ -112,9 +112,11 @@ form {
 
 .container {
     display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
     justify-content: space-around;
+    align-content: space-around;
 }
 
 
@@ -125,6 +127,10 @@ form {
 @media(min-width: 600px){
     header{
         background-position: 0px 400px;
+    }
+
+    .container {
+        flex-direction: column;
     }
 }
 
@@ -137,7 +143,14 @@ form {
     }
 
     .container {
+        display: flex;
         flex-direction: row;
+    }
+
+    .results {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
 
@@ -147,6 +160,10 @@ form {
     header {
         background-size: ;
         background-position: 0px 700px;
+    }
+
+    .container {
+        flex-direction: row;
     }
 }
 

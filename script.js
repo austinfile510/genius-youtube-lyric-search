@@ -1,6 +1,6 @@
 "use strict";
 
-const apiKey = "AIzaSyC8VlFTOdIZ35d_fCxhKb-YQrMJtMk04Fo"; // Youtube API Key
+const apiKey = "AIzaSyAdliWMjb6YxZVTW-O-omW2a2bNCYkkskU"; // Youtube API Key
 
 // API Root URLS
 
@@ -119,10 +119,10 @@ function displayVideo(responseJson) {
   console.log(responseJson);
   let videoLink = responseJson.items[0];
   $("#youtube-link").append(`
-  <h2><a href = "https://www.youtube.com/watch?v=${videoLink.id.videoId}">${titleSearchTerm} - ${artistSearchTerm}</a></h2>
   <iframe width="420" height="315"
     src="https://www.youtube.com/embed/${videoLink.id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>>
   </iframe>
+  <h2><a href = "https://www.youtube.com/watch?v=${videoLink.id.videoId}">${titleSearchTerm} - ${artistSearchTerm}</a></h2>
 `);
 }
 
