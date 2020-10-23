@@ -6,7 +6,7 @@ const apiKey = "AIzaSyC8VlFTOdIZ35d_fCxhKb-YQrMJtMk04Fo"; // Youtube API Key
 
 const lyricsURL = "https://api.lyrics.ovh/v1"; // Lyrics.ovh
 const youtubeURL = "https://www.googleapis.com/youtube/v3/search"; // Youtube
-const audioDBURL = "https://theaudiodb.p.rapidapi.com/searchtrack.php"; // The AudioDB
+const audioDBURL = "https://theaudiodb.p.rapidapi.com/searchtrack.php"; // TheAudioDB
 
 // Query Param Function
 
