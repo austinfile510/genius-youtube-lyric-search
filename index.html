@@ -17,16 +17,17 @@
   </head>
 
   <body>
-
     <header>
-      <h1 class= "shadow">Lyrical Search</h1>
-      <p class = "shadow">
+      <h1 class="shadow">Lyrical Search</h1>
+      <p class="shadow">
         Lyrical Search has got you covered for everything you wanted to know
         about a song. Type in an artist and song name for more information about
         them!
       </p>
       <form>
-        <label for="js-artist-search-area" class="shadow">Enter the artist:</label><br />
+        <label for="js-artist-search-area" class="shadow"
+          >Enter the artist:</label
+        ><br />
         <br /><input
           type="text"
           name="artistSearchArea"
@@ -35,34 +36,33 @@
           autofocus
           required
         /><br />
-        <br /><label for="js-title-search-area" class="shadow">Enter the song title:</label
+        <br /><label for="js-title-search-area" class="shadow"
+          >Enter the song title:</label
         ><br />
         <br /><input
           type="text"
           name="titleSearchArea"
           id="js-title-search-area"
-          placeholder="e.g. We Will Rock You!"
+          placeholder="e.g. We Will Rock You"
           required
         /><br />
-        <br /><input type="submit" class= "submit-button" value="Search" />
+        <br /><input type="submit" class="submit-button" value="Search" />
       </form>
     </header>
 
     <main class="container">
       <section id="results" class="hidden shadow">
         <h2>Search Results</h2>
-        <section id = "error">
-          <p id="js-error-message" class="error-message"></p>
-          </section>
-        <div class = "results">
-            <div class = "song-info-group">
-            <div class = "youtube" id="youtube-link"></div>
-            <div class = "songInfo" id="song-info"></div>
-            </div>
-        <div class = "songLyrics" id="song-lyrics"></div>
+        <div class="results">
+          <div class="song-info-group">
+            <div class="youtube" id="youtube-link"></div>
+            <div class="songInfo" id="song-info"></div>
+          </div>
+          <div class="songLyrics" id="song-lyrics"></div>
         </div>
       </section>
-    <main>
+      
+    </main>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"

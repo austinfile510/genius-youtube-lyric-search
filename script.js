@@ -48,7 +48,7 @@ function getSongInfo(title, artist) {
     })
     .then((responseJson) => displaySongInfo(responseJson))
     .catch((err) => {
-      $("#js-error-message").text(`Something went wrong: ${err.message}`);
+      $("#js-error-message").text(`Something went wrong, please try again.`);
     });
 }
 
@@ -66,7 +66,7 @@ function getLyrics(artist, title) {
     })
     .then((responseJson) => displayLyrics(responseJson))
     .catch((err) => {
-      $("#js-error-message").text(`Something went wrong: ${err.message}`);
+      $("#js-error-message").text(`Something went wrong, please try again.`);
     });
 }
 
@@ -93,7 +93,7 @@ function getYoutubeVideos(query) {
     .then((responseJson) => displayVideo(responseJson))
     .catch((err) => {
       $();
-      $("#js-error-message").text(`Something went wrong: ${err.message}`);
+      $("#js-error-message").text(`Something went wrong, please try again.`);
     });
 }
 
@@ -104,12 +104,19 @@ function getYoutubeVideos(query) {
 function displayLyrics(responseJson) {
   $("#song-lyrics").empty();
   console.log(responseJson);
+  if(!responseJson.lyrics) {
+    $("#song-lyrics").addClass("hidden");
+  }
+  else {
   const songLyrics = responseJson.lyrics;
+  $("#song-lyrics").removeClass("hidden");
   $("#song-lyrics").append(`
   </br>
   <h3>Lyrics</h3>
   <pre>${songLyrics}</pre>
   `);
+  
+  }
 }
 
 // Display Video
@@ -131,21 +138,25 @@ function displayVideo(responseJson) {
 function displaySongInfo(responseJson) {
   $("#error-message").empty();
   $("#song-info").empty();
+  $("#results").removeClass("hidden");
   console.log(responseJson);
-  const albumTitle = responseJson.track[0].strAlbum;
-  const songInfo = responseJson.track[0].strDescriptionEN;
-  if (!songInfo) {
+  if (!responseJson.track) {
+    console.log("hello world");
     $("#song-info").append(`
-      <p>We're sorry, but no song info is available for this track in AudioDB. Check <a href="https://www.google.com">Google</a> for more information.</p>
+      <p>We're sorry, but no song info is available for this track. Please try again, or check <a href="https://www.google.com">Google</a> for more information.</p>
     `);
+    $("#song-lyrics").addClass("hidden");
   } else {
+    const albumTitle = responseJson.track[0].strAlbum;
+    const songInfo = responseJson.track[0].strDescriptionEN;
     $("#song-info").append(`  
   </br>
   <p>Album: ${albumTitle}</p>
   <p class= "js-lyrics">${songInfo}</p>
   `);
+  $("#song-lyrics").removeClass("hidden");
   }
-  $("#results").removeClass("hidden");
+  
 }
 
 let artistSearchTerm, titleSearchTerm; // Search Term Variables
