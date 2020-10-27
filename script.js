@@ -106,6 +106,7 @@ function displayLyrics(responseJson) {
   console.log(responseJson);
   if(!responseJson.lyrics) {
     $("#song-lyrics").addClass("hidden");
+    $("#youtube-link").addClass("hidden");
   }
   else {
   const songLyrics = responseJson.lyrics;
@@ -146,7 +147,6 @@ function displaySongInfo(responseJson) {
       <p>We're sorry, but no song info is available for this track. Please try again, or check <a href="https://www.google.com">Google</a> for more information.</p>
     `);
     $("#song-lyrics").addClass("hidden");
-    $("#youtube-link").addClass("hidden");
   } else {
     const albumTitle = responseJson.track[0].strAlbum;
     const songInfo = responseJson.track[0].strDescriptionEN;
