@@ -125,6 +125,7 @@ function displayVideo(responseJson) {
   $("#youtube-link").empty();
   console.log(responseJson);
   let videoLink = responseJson.items[0];
+  console.log(videoLink)
   $("#youtube-link").append(`
   <iframe width="420" height="315"
     src="https://www.youtube.com/embed/${videoLink.id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>>
@@ -141,11 +142,11 @@ function displaySongInfo(responseJson) {
   $("#results").removeClass("hidden");
   console.log(responseJson);
   if (!responseJson.track) {
-    console.log("hello world");
     $("#song-info").append(`
       <p>We're sorry, but no song info is available for this track. Please try again, or check <a href="https://www.google.com">Google</a> for more information.</p>
     `);
     $("#song-lyrics").addClass("hidden");
+    $("#youtube-link").addClass("hidden");
   } else {
     const albumTitle = responseJson.track[0].strAlbum;
     const songInfo = responseJson.track[0].strDescriptionEN;
