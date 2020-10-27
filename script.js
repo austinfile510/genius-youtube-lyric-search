@@ -138,7 +138,6 @@ function displayVideo(responseJson) {
 // Display Song Info
 
 function displaySongInfo(responseJson) {
-  $("#error-message").empty();
   $("#song-info").empty();
   $("#results").removeClass("hidden");
   console.log(responseJson);
@@ -167,6 +166,7 @@ let artistSearchTerm, titleSearchTerm; // Search Term Variables
 function watchForm() {
   $("form").submit((event) => {
     event.preventDefault();
+    $("#error-message").empty();
     artistSearchTerm = $("#js-artist-search-area").val();
     titleSearchTerm = $("#js-title-search-area").val();
     getSongInfo(titleSearchTerm, artistSearchTerm);
