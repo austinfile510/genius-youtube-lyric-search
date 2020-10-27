@@ -106,7 +106,6 @@ function displayLyrics(responseJson) {
   console.log(responseJson);
   if(!responseJson.lyrics) {
     $("#song-lyrics").addClass("hidden");
-    $("#youtube-link").addClass("hidden");
   }
   else {
   const songLyrics = responseJson.lyrics;
@@ -139,7 +138,6 @@ function displayVideo(responseJson) {
 
 function displaySongInfo(responseJson) {
   $("#song-info").empty();
-  $("#results").removeClass("hidden");
   console.log(responseJson);
   if (!responseJson.track[0].strDescriptionEN) {
     $("#song-info").append(`
@@ -167,6 +165,7 @@ function watchForm() {
   $("form").submit((event) => {
     event.preventDefault();
     $("#error-message").empty();
+    $("#results").removeClass("hidden");
     artistSearchTerm = $("#js-artist-search-area").val();
     titleSearchTerm = $("#js-title-search-area").val();
     getSongInfo(titleSearchTerm, artistSearchTerm);
