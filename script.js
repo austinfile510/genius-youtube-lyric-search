@@ -55,7 +55,7 @@ function getSongInfo(title, artist) {
 // Get Song Lyrics
 
 function getLyrics(artist, title) {
-  const lyricsSearchURL = `${lyricsURL}/${artist}/${title}`;
+  const lyricsSearchURL = lyricsURL + "/" + artist + "/" + title;
 
   fetch(lyricsSearchURL)
     .then((response) => {
